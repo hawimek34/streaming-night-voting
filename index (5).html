@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Streaming Night 🍿 | What Should We Watch?</title>
+<style>
+:root{--bg:#090b14;--panel:#111525;--panel2:#171c30;--text:#f8fafc;--muted:#9aa5bd;--purple:#9b5cff;--cyan:#4de8ff;--pink:#ff5ca8;--yellow:#ffd166;--green:#5ee6a8;--border:#29304a}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;background:radial-gradient(circle at 15% -10%,#34215a 0,#090b14 42%),linear-gradient(#090b14,#090b14);color:var(--text)}
+.wrap{max-width:1400px;margin:auto;padding:22px}.glass{background:rgba(17,21,37,.88);backdrop-filter:blur(14px);border:1px solid var(--border);border-radius:24px;box-shadow:0 22px 60px rgba(0,0,0,.25)}
+.hero{position:relative;overflow:hidden;padding:30px;display:grid;grid-template-columns:1.3fr .7fr;gap:18px;background:linear-gradient(135deg,rgba(155,92,255,.19),rgba(77,232,255,.06)),rgba(17,21,37,.92)}
+.hero:before{content:'🍿';position:absolute;right:18px;top:-35px;font-size:145px;opacity:.11;transform:rotate(12deg)}
+.eyebrow{font-size:12px;text-transform:uppercase;letter-spacing:.14em;font-weight:900;color:var(--cyan)}h1{font-size:clamp(40px,5vw,68px);line-height:.95;margin:12px 0 14px;max-width:760px}.hero p{max-width:760px;color:#c4ccdb;line-height:1.55;font-size:16px}.buttons{display:flex;gap:10px;flex-wrap:wrap;margin-top:20px}.btn{border:1px solid var(--border);border-radius:14px;padding:11px 15px;color:var(--text);background:#171c30;font-weight:800;cursor:pointer;transition:.2s}.btn:hover{transform:translateY(-2px);border-color:#4a5270}.btn.primary{background:linear-gradient(135deg,var(--purple),#6d35cf);border-color:#a86cff}
+.winner{padding:24px;position:relative;overflow:hidden;background:linear-gradient(160deg,#24143e,#121728)}.winner:after{content:'🎬';position:absolute;right:-18px;bottom:-25px;font-size:120px;opacity:.12}.winner small{color:#cab8ff;font-weight:900}.winner h2{font-size:32px;margin:8px 0}.badge{display:inline-flex;gap:6px;align-items:center;padding:6px 10px;border-radius:999px;background:#21183b;border:1px solid #3f2d68;color:#dbcfff;font-size:12px;font-weight:900}.grid{display:grid;grid-template-columns:repeat(12,1fr);gap:16px;margin-top:16px}.card{padding:20px}.s3{grid-column:span 3}.s4{grid-column:span 4}.s5{grid-column:span 5}.s6{grid-column:span 6}.s7{grid-column:span 7}.s8{grid-column:span 8}.s12{grid-column:span 12}
+.kpi{min-height:110px}.kpi .icon{font-size:28px}.kpi .label{font-size:11px;color:var(--muted);font-weight:900;letter-spacing:.08em}.kpi .value{font-size:34px;font-weight:950;margin-top:7px}.kpi .hint{font-size:12px;color:var(--muted);margin-top:4px}
+h3{margin:0 0 4px;font-size:17px}.sub{color:var(--muted);font-size:12px;margin-bottom:16px}.movie-list{display:grid;gap:12px}.movie-row{display:grid;grid-template-columns:42px 1fr 70px;gap:10px;align-items:center}.num{font-size:20px;font-weight:950;color:#c9b8ff}.mname{font-weight:850}.barbg{height:11px;background:#0b0e18;border-radius:999px;border:1px solid #252c43;overflow:hidden;margin-top:7px}.bar{height:100%;border-radius:999px;background:linear-gradient(90deg,var(--purple),var(--cyan))}.votes{text-align:right;font-weight:900;color:#dbe5f6;font-size:13px}
+.poster-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:10px}.poster{min-height:180px;border-radius:16px;padding:14px;display:flex;flex-direction:column;justify-content:space-between;position:relative;overflow:hidden;border:1px solid rgba(255,255,255,.12);box-shadow:inset 0 -70px 80px rgba(0,0,0,.4)}.poster .art{font-size:45px;opacity:.9}.poster .title{font-weight:950;font-size:15px;line-height:1.05}.poster .meta{font-size:10px;color:#d7deed;margin-top:4px}.poster.win{outline:2px solid var(--yellow);box-shadow:0 0 30px rgba(255,209,102,.16),inset 0 -70px 80px rgba(0,0,0,.4)}
+.heat{display:grid;grid-template-columns:105px repeat(6,1fr);gap:5px;font-size:11px}.heat div{padding:9px 6px;text-align:center;border:1px solid #242b42;border-radius:9px;min-height:34px}.heat .lab{font-weight:900;text-align:left;background:#0e1220}.heat .cell{font-weight:950}.insight{padding:12px 14px;border-left:3px solid var(--cyan);background:#0d1322;border-radius:10px;line-height:1.5;color:#d8e1ef;font-size:13px}
+.canvas-wrap{height:280px}.canvas-wrap canvas{width:100%;height:100%;display:block;background:#0d1220;border:1px solid #242b42;border-radius:16px}.popcorn{display:flex;align-items:center;gap:14px}.popcorn-bowl{font-size:68px;filter:drop-shadow(0 8px 18px rgba(255,209,102,.14))}.meter{flex:1}.meter .big{font-size:42px;font-weight:950}.meter .small{color:var(--muted);font-size:12px}.meterbar{height:17px;border-radius:999px;overflow:hidden;background:#0a0d16;border:1px solid #252c43;margin-top:10px}.meterfill{height:100%;background:linear-gradient(90deg,var(--pink),var(--yellow),var(--green));transition:width .6s ease}
+.form-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}.field label{font-size:11px;color:var(--muted);display:block;margin-bottom:5px;font-weight:800}.field input,.field select{width:100%;padding:11px;background:#0d1220;color:var(--text);border:1px solid #2a3350;border-radius:11px}.status{font-size:12px;color:var(--muted);margin-top:10px;min-height:18px}.table-wrap{overflow:auto;margin-top:14px}table{width:100%;border-collapse:collapse;font-size:12px}th,td{padding:9px;border-bottom:1px solid #252c42;text-align:left;white-space:nowrap}th{color:#c9b8ff;font-size:10px;text-transform:uppercase;letter-spacing:.08em}
+.toast{position:fixed;left:50%;bottom:25px;transform:translate(-50%,20px);opacity:0;background:#171c30;border:1px solid #49516e;padding:12px 16px;border-radius:999px;font-weight:850;box-shadow:0 20px 50px rgba(0,0,0,.35);transition:.25s;pointer-events:none;z-index:99}.toast.show{opacity:1;transform:translate(-50%,0)}
+.footer{text-align:center;color:#727d96;font-size:11px;padding:24px 0 8px}.hidden{display:none}@media(max-width:1000px){.hero{grid-template-columns:1fr}.s3,.s4,.s5,.s6,.s7,.s8{grid-column:span 12}.poster-grid{grid-template-columns:repeat(3,1fr)}}@media(max-width:620px){.wrap{padding:12px}.poster-grid{grid-template-columns:repeat(2,1fr)}.form-grid{grid-template-columns:1fr}.hero{padding:22px}.heat{grid-template-columns:80px repeat(6,1fr);font-size:9px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <section class="hero glass">
+    <div>
+      <div class="eyebrow">🍿 Streaming Night • Classroom Data Story</div>
+      <h1>What Should We Watch?</h1>
+      <p>Everyone gets a vote. The dashboard turns those votes into a movie-night story: the winner, the runner-up, the mood, the genres people want, rating strength, and how much the room agrees.</p>
+      <div class="buttons"><button class="btn primary" onclick="document.getElementById('vote-box').scrollIntoView()">🎟️ Cast a vote</button><button class="btn" onclick="document.getElementById('viz').scrollIntoView()">📊 Explore the data</button><button class="btn" onclick="loadFromSheets()">🔄 Sync Google Sheets</button><button class="btn" onclick="downloadCSV()">⬇️ Export CSV</button></div>
+    </div>
+    <div class="winner glass"><small>TONIGHT'S DEMOCRATIC PICK 🏆</small><h2 id="winnerName">—</h2><div id="winnerMeta" style="color:#b8c1d4">—</div><div style="margin-top:14px"><span class="badge" id="winnerShare">—</span> <span class="badge" id="consensusPill">—</span></div></div>
+  </section>
+
+  <section class="grid">
+    <div class="card glass s3 kpi"><div class="icon">👥</div><div class="label">TOTAL VOTERS</div><div class="value" id="kpiVoters">0</div><div class="hint">voices in the room</div></div>
+    <div class="card glass s3 kpi"><div class="icon">⭐</div><div class="label">AVG. RATING</div><div class="value" id="kpiRating">0.0</div><div class="hint">out of 10</div></div>
+    <div class="card glass s3 kpi"><div class="icon">🏆</div><div class="label">WINNER SHARE</div><div class="value" id="kpiShare">0%</div><div class="hint">of all votes</div></div>
+    <div class="card glass s3 kpi"><div class="icon">🥈</div><div class="label">RUNNER-UP</div><div class="value" id="kpiSecond">0%</div><div class="hint">support behind #2</div></div>
+  </section>
+
+  <section id="viz" class="grid">
+    <div class="card glass s6"><h3>🥇 The leaderboard</h3><div class="sub">A familiar bar chart tells the fastest story.</div><div id="rankings" class="movie-list"></div></div>
+    <div class="card glass s6"><h3>🎬 Movie posters</h3><div class="sub">The same votes, presented as a visual browsing experience.</div><div id="posters" class="poster-grid"></div></div>
+
+    <div class="card glass s7"><h3>🧩 Mood × Genre heatmap</h3><div class="sub">The winner can hide patterns. This view shows what type of night people actually want.</div><div id="heatmap" class="heat"></div></div>
+    <div class="card glass s5"><h3>🍿 Popcorn consensus meter</h3><div class="sub">How strongly did the room agree?</div><div class="popcorn"><div class="popcorn-bowl">🍿</div><div class="meter"><div class="big" id="consensusBig">0%</div><div class="small">winner share of all votes</div><div class="meterbar"><div id="consensusBar" class="meterfill" style="width:0%"></div></div></div></div><div style="height:16px"></div><div class="insight" id="insight">Add votes to see the story.</div></div>
+
+    <div class="card glass s6"><h3>🎭 Mood of the room</h3><div class="sub">Chill? Funny? Exciting? Thoughtful?</div><div class="canvas-wrap"><canvas id="moodChart"></canvas></div></div>
+    <div class="card glass s6"><h3>⭐ Popularity vs. rating</h3><div class="sub">Does the movie people want also have the best rating?</div><div class="canvas-wrap"><canvas id="ratingChart"></canvas></div></div>
+
+    <div class="card glass s12"><h3>🎨 One dataset, many stories</h3><div class="sub">This is the key presentation idea: the same class vote can support different visual questions.</div><div class="insight"><b>Question 1:</b> What should we watch? → leaderboard & winner. &nbsp; <b>Question 2:</b> How close was it? → consensus meter. &nbsp; <b>Question 3:</b> What mood does the class want? → mood chart. &nbsp; <b>Question 4:</b> What patterns are hidden? → heatmap. &nbsp; <b>Question 5:</b> Is popularity the same as quality? → rating vs. votes.</div></div>
+  </section>
+
+  <section id="vote-box" class="card glass" style="margin-top:16px"><h3>🎟️ Cast your vote</h3><div class="sub">Use this section during class. The page can write votes to Google Sheets when you connect the Apps Script endpoint.</div>
+    <form id="voteForm" class="form-grid">
+      <div class="field"><label>Your name / nickname</label><input id="voter" placeholder="Student 31" required></div>
+      <div class="field"><label>Movie pick</label><select id="movie"></select></div>
+      <div class="field"><label>Your rating</label><select id="rating"></select></div>
+      <div class="field"><label>Second choice</label><select id="second"></select></div>
+      <div class="field"><label>Tonight's mood</label><select id="mood"></select></div>
+      <div class="field"><label>Group</label><select id="group"></select></div>
+      <div style="grid-column:1/-1"><button class="btn primary" type="submit">🍿 Submit my vote</button></div>
+    </form><div id="status" class="status"></div>
+    <div class="table-wrap"><table><thead><tr><th>Voter</th><th>Movie</th><th>Genre</th><th>Rating</th><th>2nd choice</th><th>Mood</th><th>Group</th></tr></thead><tbody id="voteTable"></tbody></table></div>
+  </section>
+  <div class="footer">Streaming Night • Built for a classroom data-visualization project • Replace the sample data with your class votes.</div>
+</div>
+<div id="toast" class="toast">🍿 Vote added!</div>
+<script>
+const CONFIG={
+  // After deploying Apps Script, paste the Web App /exec URL here.
+  GOOGLE_APPS_SCRIPT_URL:'https://script.google.com/macros/s/AKfycbwmBM-7OjnynDkXOvwqsiqIRSwhwxcquKS1X7cVDF47TU0SuJQLfM3Ow_HwDl7ogCvf3Q/exec',
+  // Optional public Google Sheet ID for read-only fallback using gviz.
+  GOOGLE_SHEET_ID:'',
+  GOOGLE_SHEET_TAB:'Votes'
+};
+const movies=[
+{name:'Midnight Signal',genre:'Sci-Fi',art:'🌌',bg:'linear-gradient(150deg,#29225a,#0f1731)'},
+{name:'The Last Recipe',genre:'Comedy',art:'🍝',bg:'linear-gradient(150deg,#614021,#1d1520)'},
+{name:'City of Echoes',genre:'Drama',art:'🎭',bg:'linear-gradient(150deg,#263d5f,#141826)'},
+{name:'Wild Horizon',genre:'Adventure',art:'🏔️',bg:'linear-gradient(150deg,#1d5f56,#10201e)'},
+{name:'Neon Hearts',genre:'Romance',art:'💜',bg:'linear-gradient(150deg,#5f234f,#241329)'},
+{name:'Shadow Protocol',genre:'Thriller',art:'🕶️',bg:'linear-gradient(150deg,#303842,#12151c)'}
+];
+const moods=['Chill','Funny','Exciting','Thoughtful'],groups=['Campus','Friends','Family'];
+const seed=[
+['Voter 01','Midnight Signal',9,'Shadow Protocol','Exciting','Campus'],['Voter 02','The Last Recipe',8,'Neon Hearts','Funny','Friends'],['Voter 03','Midnight Signal',9,'City of Echoes','Exciting','Friends'],['Voter 04','City of Echoes',9,'Midnight Signal','Thoughtful','Family'],['Voter 05','Shadow Protocol',8,'Midnight Signal','Exciting','Campus'],['Voter 06','Wild Horizon',8,'Midnight Signal','Exciting','Friends'],['Voter 07','Midnight Signal',8,'Shadow Protocol','Exciting','Family'],['Voter 08','The Last Recipe',9,'City of Echoes','Funny','Campus'],['Voter 09','City of Echoes',8,'The Last Recipe','Thoughtful','Family'],['Voter 10','Midnight Signal',10,'Wild Horizon','Exciting','Campus'],['Voter 11','Shadow Protocol',9,'Midnight Signal','Exciting','Friends'],['Voter 12','The Last Recipe',8,'Neon Hearts','Funny','Campus'],['Voter 13','City of Echoes',9,'Midnight Signal','Thoughtful','Friends'],['Voter 14','Neon Hearts',8,'The Last Recipe','Chill','Family'],['Voter 15','Midnight Signal',9,'Shadow Protocol','Exciting','Campus'],['Voter 16','Wild Horizon',9,'Midnight Signal','Exciting','Friends'],['Voter 17','Shadow Protocol',8,'City of Echoes','Exciting','Family'],['Voter 18','Midnight Signal',8,'The Last Recipe','Chill','Friends'],['Voter 19','The Last Recipe',9,'City of Echoes','Funny','Campus'],['Voter 20','City of Echoes',8,'Shadow Protocol','Thoughtful','Family'],['Voter 21','Midnight Signal',10,'Wild Horizon','Exciting','Campus'],['Voter 22','Shadow Protocol',9,'Midnight Signal','Exciting','Friends'],['Voter 23','Neon Hearts',8,'The Last Recipe','Chill','Family'],['Voter 24','Wild Horizon',7,'Midnight Signal','Exciting','Campus'],['Voter 25','Midnight Signal',9,'City of Echoes','Exciting','Friends'],['Voter 26','The Last Recipe',8,'Shadow Protocol','Funny','Family'],['Voter 27','City of Echoes',9,'Midnight Signal','Thoughtful','Campus'],['Voter 28','Midnight Signal',9,'Shadow Protocol','Exciting','Friends'],['Voter 29','Shadow Protocol',8,'Midnight Signal','Exciting','Family'],['Voter 30','Midnight Signal',10,'The Last Recipe','Exciting','Campus']
+].map(r=>({voter:r[0],movie:r[1],rating:+r[2],second:r[3],mood:r[4],group:r[5]}));
+let data=JSON.parse(localStorage.getItem('streamingVotesV2')||'null')||seed.map(x=>({...x}));
+function info(n){return movies.find(m=>m.name===n)||{genre:'Unknown',art:'🎬',bg:'linear-gradient(150deg,#333,#111)'}}
+function pct(n,d){return d?Math.round(n/d*100):0}
+function opts(id,arr){document.getElementById(id).innerHTML=arr.map(v=>`<option>${v}</option>`).join('')}
+function setup(){opts('movie',movies.map(m=>m.name));opts('second',movies.map(m=>m.name));opts('rating',[1,2,3,4,5,6,7,8,9,10]);opts('mood',moods);opts('group',groups)}
+function calc(){let total=data.length, counts={},ratings={},mood={},combo={};data.forEach(d=>{counts[d.movie]=(counts[d.movie]||0)+1;(ratings[d.movie]??=[]).push(d.rating);mood[d.mood]=(mood[d.mood]||0)+1;let g=info(d.movie).genre;combo[d.mood+'|'+g]=(combo[d.mood+'|'+g]||0)+1});let sorted=movies.map(m=>({movie:m.name,genre:m.genre,votes:counts[m.name]||0,avg:(ratings[m.name]||[]).reduce((a,b)=>a+b,0)/(ratings[m.name]?.length||1)})).sort((a,b)=>b.votes-a.votes);let win=sorted[0]||{movie:'—',genre:'—',votes:0,avg:0};return{total,counts,ratings,mood,combo,sorted,win,avg:total?data.reduce((s,d)=>s+d.rating,0)/total:0}}
+function render(){let s=calc(),w=s.win,share=pct(w.votes,s.total),second=s.sorted[1]?pct(s.sorted[1].votes,s.total):0;document.getElementById('winnerName').textContent=w.movie;document.getElementById('winnerMeta').textContent=`${w.genre} • ${w.votes} of ${s.total} votes • ${w.avg.toFixed(1)}/10 average rating`;document.getElementById('winnerShare').textContent=`${share}% share`;document.getElementById('consensusPill').textContent=share>=50?'Clear winner':'Close decision';document.getElementById('kpiVoters').textContent=s.total;document.getElementById('kpiRating').textContent=s.avg.toFixed(1);document.getElementById('kpiShare').textContent=share+'%';document.getElementById('kpiSecond').textContent=second+'%';
+ document.getElementById('rankings').innerHTML=s.sorted.map((r,i)=>`<div class="movie-row"><div class="num">#${i+1}</div><div><div class="mname">${r.movie}</div><div class="barbg"><div class="bar" style="width:${pct(r.votes,Math.max(1,w.votes))}%"></div></div></div><div class="votes">${r.votes}</div></div>`).join('');
+ document.getElementById('posters').innerHTML=s.sorted.map(r=>{let m=info(r.movie);return `<div class="poster ${r.movie===w.movie?'win':''}" style="background:${m.bg}"><div class="art">${m.art}</div><div><div class="title">${r.movie}</div><div class="meta">${r.genre} • ${r.votes} votes • ⭐ ${r.avg.toFixed(1)}</div></div></div>`}).join('');
+ let gs=[...new Set(movies.map(m=>m.genre))];let heat=`<div class="lab">Mood / Genre</div>`+gs.map(g=>`<div style="font-weight:900">${g}</div>`).join('');moods.forEach(m=>{heat+=`<div class="lab">${m}</div>`+gs.map(g=>{let v=s.combo[m+'|'+g]||0;let alpha=Math.min(.82,.08+v/Math.max(1,s.total)*2.6);return `<div class="cell" style="background:rgba(155,92,255,${alpha})">${v}</div>`}).join('')});document.getElementById('heatmap').style.gridTemplateColumns=`105px repeat(${gs.length},1fr)`;document.getElementById('heatmap').innerHTML=heat;
+ document.getElementById('consensusBig').textContent=share+'%';document.getElementById('consensusBar').style.width=share+'%';let lead=w.votes, runner=s.sorted[1]?.votes||0;document.getElementById('insight').innerHTML=share>=50?`<b>${w.movie}</b> has majority support. The class could make the decision quickly.`:lead-runner<=1?`The room is split: <b>${w.movie}</b> is only ${lead-runner} vote ahead of the runner-up.`:`<b>${w.movie}</b> leads by ${lead-runner} votes, but the result is not a landslide.`;
+ drawMood(s.mood);drawScatter(s.sorted);renderTable();localStorage.setItem('streamingVotesV2',JSON.stringify(data));}
+function renderTable(){document.getElementById('voteTable').innerHTML=data.slice().reverse().slice(0,80).map(d=>`<tr><td>${d.voter}</td><td>${d.movie}</td><td>${info(d.movie).genre}</td><td>${d.rating}</td><td>${d.second}</td><td>${d.mood}</td><td>${d.group}</td></tr>`).join('')}
+function fitCanvas(c){let r=c.getBoundingClientRect(),d=window.devicePixelRatio||1;c.width=Math.max(420,r.width*d);c.height=280*d;let ctx=c.getContext('2d');ctx.setTransform(d,0,0,d,0,0);return ctx}
+function drawMood(m){let c=document.getElementById('moodChart'),ctx=fitCanvas(c),W=c.clientWidth,H=280,max=Math.max(1,...moods.map(x=>m[x]||0));ctx.clearRect(0,0,W,H);ctx.font='12px system-ui';moods.forEach((label,i)=>{let x=35+i*((W-70)/moods.length),bw=Math.min(58,(W-90)/moods.length*.58),bh=((m[label]||0)/max)*(H-75);ctx.fillStyle=['#9b5cff','#ff5ca8','#4de8ff','#ffd166'][i];ctx.fillRect(x,H-45-bh,bw,bh);ctx.fillStyle='#dce4f2';ctx.textAlign='center';ctx.fillText(label,x+bw/2,H-24);ctx.fillText(m[label]||0,x+bw/2,H-54-bh)});}
+function drawScatter(rows){let c=document.getElementById('ratingChart'),ctx=fitCanvas(c),W=c.clientWidth,H=280;ctx.clearRect(0,0,W,H);ctx.strokeStyle='#2b334c';ctx.fillStyle='#8d98ae';ctx.font='11px system-ui';[0,2.5,5,7.5,10].forEach(y=>{let py=H-45-y/10*(H-70);ctx.beginPath();ctx.moveTo(42,py);ctx.lineTo(W-20,py);ctx.stroke();ctx.fillText(y.toFixed(1),9,py+4)});let max=Math.max(1,...rows.map(r=>r.votes));rows.forEach((r,i)=>{let x=52+i*((W-90)/Math.max(1,rows.length-1)),y=H-45-(r.avg/10)*(H-70),rad=7+r.votes/max*13;ctx.beginPath();ctx.fillStyle='#4de8ff';ctx.globalAlpha=.8;ctx.arc(x,y,rad,0,Math.PI*2);ctx.fill();ctx.globalAlpha=1;ctx.fillStyle='#e5ecf8';ctx.textAlign='center';ctx.fillText(r.movie.split(' ')[0],x,H-18)});}
+function toast(t){let el=document.getElementById('toast');el.textContent=t;el.classList.add('show');setTimeout(()=>el.classList.remove('show'),1800)}
+async function submitToGoogleSheets(vote){if(!CONFIG.GOOGLE_APPS_SCRIPT_URL)return false;try{await fetch(CONFIG.GOOGLE_APPS_SCRIPT_URL,{method:'POST',mode:'no-cors',body:JSON.stringify(vote)});return true}catch(e){return false}}
+async function loadFromSheets(){if(CONFIG.GOOGLE_SHEET_ID){try{let url=`https://docs.google.com/spreadsheets/d/${CONFIG.GOOGLE_SHEET_ID}/gviz/tq?tqx=out:csv&sheet=${encodeURIComponent(CONFIG.GOOGLE_SHEET_TAB)}`;let text=await fetch(url).then(r=>r.text());let lines=text.trim().split(/\r?\n/).slice(1);let parsed=lines.map(parseCSV).filter(r=>r.length>=7).map(r=>({voter:r[0],movie:r[1],rating:+r[3],second:r[4],mood:r[5],group:r[6]})).filter(x=>x.voter);if(parsed.length){data=parsed;render();toast('✅ Synced from Google Sheets')}}catch(e){toast('⚠️ Sheet read failed')}}else toast('Paste your Google Sheet ID in CONFIG first.')}
+function parseCSV(line){let out=[],cur='',q=false;for(let i=0;i<line.length;i++){let ch=line[i];if(ch==='"'&&line[i+1]==='"'){cur+='"';i++;continue}if(ch==='"'){q=!q;continue}if(ch===','&&!q){out.push(cur);cur=''}else cur+=ch}out.push(cur);return out}
+function downloadCSV(){let rows=[['Voter','Movie Pick','Genre','Rating','Second Choice','Mood','Group'],...data.map(d=>[d.voter,d.movie,info(d.movie).genre,d.rating,d.second,d.mood,d.group])];let csv=rows.map(r=>r.map(x=>'"'+String(x).replaceAll('"','""')+'"').join(',')).join('\n');let a=document.createElement('a');a.href=URL.createObjectURL(new Blob([csv],{type:'text/csv'}));a.download='streaming_night_votes.csv';a.click()}
+
+document.getElementById('voteForm').addEventListener('submit',async e=>{e.preventDefault();let vote={voter:document.getElementById('voter').value.trim(),movie:document.getElementById('movie').value,rating:+document.getElementById('rating').value,second:document.getElementById('second').value,mood:document.getElementById('mood').value,group:document.getElementById('group').value};data.push(vote);render();e.target.reset();setup();let pushed=await submitToGoogleSheets(vote);document.getElementById('status').textContent=pushed?'✅ Vote sent to Google Sheets.':'ℹ️ Vote saved on this browser. Add the Apps Script URL to sync with Google Sheets.';toast(pushed?'☁️ Saved to Google Sheets!':'🍿 Vote added!')});
+setup();render();window.addEventListener('resize',render);
+</script>
+</body>
+</html>
