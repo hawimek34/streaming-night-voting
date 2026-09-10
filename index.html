@@ -14,7 +14,7 @@
 .winner{padding:24px;position:relative;overflow:hidden;background:linear-gradient(160deg,#24143e,#121728)}.winner:after{content:'🎬';position:absolute;right:-18px;bottom:-25px;font-size:120px;opacity:.12}.winner small{color:#cab8ff;font-weight:900}.winner h2{font-size:32px;margin:8px 0}.badge{display:inline-flex;gap:6px;align-items:center;padding:6px 10px;border-radius:999px;background:#21183b;border:1px solid #3f2d68;color:#dbcfff;font-size:12px;font-weight:900}.grid{display:grid;grid-template-columns:repeat(12,1fr);gap:16px;margin-top:16px}.card{padding:20px}.s3{grid-column:span 3}.s4{grid-column:span 4}.s5{grid-column:span 5}.s6{grid-column:span 6}.s7{grid-column:span 7}.s8{grid-column:span 8}.s12{grid-column:span 12}
 .kpi{min-height:110px}.kpi .icon{font-size:28px}.kpi .label{font-size:11px;color:var(--muted);font-weight:900;letter-spacing:.08em}.kpi .value{font-size:34px;font-weight:950;margin-top:7px}.kpi .hint{font-size:12px;color:var(--muted);margin-top:4px}
 h3{margin:0 0 4px;font-size:17px}.sub{color:var(--muted);font-size:12px;margin-bottom:16px}.movie-list{display:grid;gap:12px}.movie-row{display:grid;grid-template-columns:42px 1fr 70px;gap:10px;align-items:center}.num{font-size:20px;font-weight:950;color:#c9b8ff}.mname{font-weight:850}.barbg{height:11px;background:#0b0e18;border-radius:999px;border:1px solid #252c43;overflow:hidden;margin-top:7px}.bar{height:100%;border-radius:999px;background:linear-gradient(90deg,var(--purple),var(--cyan))}.votes{text-align:right;font-weight:900;color:#dbe5f6;font-size:13px}
-.poster-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:10px}.poster{min-height:180px;border-radius:16px;padding:14px;display:flex;flex-direction:column;justify-content:space-between;position:relative;overflow:hidden;border:1px solid rgba(255,255,255,.12);box-shadow:inset 0 -70px 80px rgba(0,0,0,.4)}.poster .art{font-size:45px;opacity:.9}.poster .title{font-weight:950;font-size:15px;line-height:1.05}.poster .meta{font-size:10px;color:#d7deed;margin-top:4px}.poster.win{outline:2px solid var(--yellow);box-shadow:0 0 30px rgba(255,209,102,.16),inset 0 -70px 80px rgba(0,0,0,.4)}
+.poster-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:10px}.poster{min-height:180px;border-radius:16px;padding:14px;display:flex;flex-direction:column;justify-content:space-between;position:relative;overflow:hidden;border:1px solid rgba(255,255,255,.12);box-shadow:inset 0 -70px 80px rgba(0,0,0,.4)}.poster .art{font-size:45px;opacity:.9}.posterimg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0}.posterOverlay{position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.08),rgba(0,0,0,.18) 40%,rgba(0,0,0,.88));z-index:1}.posterTop{position:relative;z-index:2;font-size:45px;opacity:.9}.posterText{position:relative;z-index:2}.poster .title{font-weight:950;font-size:15px;line-height:1.05}.poster .meta{font-size:10px;color:#d7deed;margin-top:4px}.poster.win{outline:2px solid var(--yellow);box-shadow:0 0 30px rgba(255,209,102,.16),inset 0 -70px 80px rgba(0,0,0,.4)}
 .heat{display:grid;grid-template-columns:105px repeat(6,1fr);gap:5px;font-size:11px}.heat div{padding:9px 6px;text-align:center;border:1px solid #242b42;border-radius:9px;min-height:34px}.heat .lab{font-weight:900;text-align:left;background:#0e1220}.heat .cell{font-weight:950}.insight{padding:12px 14px;border-left:3px solid var(--cyan);background:#0d1322;border-radius:10px;line-height:1.5;color:#d8e1ef;font-size:13px}
 .canvas-wrap{height:280px}.canvas-wrap canvas{width:100%;height:100%;display:block;background:#0d1220;border:1px solid #242b42;border-radius:16px}.popcorn{display:flex;align-items:center;gap:14px}.popcorn-bowl{font-size:68px;filter:drop-shadow(0 8px 18px rgba(255,209,102,.14))}.meter{flex:1}.meter .big{font-size:42px;font-weight:950}.meter .small{color:var(--muted);font-size:12px}.meterbar{height:17px;border-radius:999px;overflow:hidden;background:#0a0d16;border:1px solid #252c43;margin-top:10px}.meterfill{height:100%;background:linear-gradient(90deg,var(--pink),var(--yellow),var(--green));transition:width .6s ease}
 .form-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}.field label{font-size:11px;color:var(--muted);display:block;margin-bottom:5px;font-weight:800}.field input,.field select{width:100%;padding:11px;background:#0d1220;color:var(--text);border:1px solid #2a3350;border-radius:11px}.status{font-size:12px;color:var(--muted);margin-top:10px;min-height:18px}.table-wrap{overflow:auto;margin-top:14px}table{width:100%;border-collapse:collapse;font-size:12px}th,td{padding:9px;border-bottom:1px solid #252c42;text-align:left;white-space:nowrap}th{color:#c9b8ff;font-size:10px;text-transform:uppercase;letter-spacing:.08em}
@@ -71,33 +71,86 @@ h3{margin:0 0 4px;font-size:17px}.sub{color:var(--muted);font-size:12px;margin-b
 <div id="toast" class="toast">🍿 Vote added!</div>
 <script>
 const CONFIG={
-  // After deploying Apps Script, paste the Web App /exec URL here.
-  GOOGLE_APPS_SCRIPT_URL:'https://script.google.com/macros/s/AKfycbwmBM-7OjnynDkXOvwqsiqIRSwhwxcquKS1X7cVDF47TU0SuJQLfM3Ow_HwDl7ogCvf3Q/exec',
-  // Optional public Google Sheet ID for read-only fallback using gviz.
-  GOOGLE_SHEET_ID:'',
-  GOOGLE_SHEET_TAB:'Votes'
+  // Paste your deployed Google Apps Script Web App /exec URL here.
+  GOOGLE_APPS_SCRIPT_URL:'https://script.google.com/macros/s/AKfycbwmBM-7OjnynDkXOvwqsiqIRSwhwxcquKS1X7cVDF47TU0SuJQLfM3Ow_HwDl7ogCvf3Q/exec'
 };
 const movies=[
-{name:'Midnight Signal',genre:'Sci-Fi',art:'🌌',bg:'linear-gradient(150deg,#29225a,#0f1731)'},
-{name:'The Last Recipe',genre:'Comedy',art:'🍝',bg:'linear-gradient(150deg,#614021,#1d1520)'},
-{name:'City of Echoes',genre:'Drama',art:'🎭',bg:'linear-gradient(150deg,#263d5f,#141826)'},
-{name:'Wild Horizon',genre:'Adventure',art:'🏔️',bg:'linear-gradient(150deg,#1d5f56,#10201e)'},
-{name:'Neon Hearts',genre:'Romance',art:'💜',bg:'linear-gradient(150deg,#5f234f,#241329)'},
-{name:'Shadow Protocol',genre:'Thriller',art:'🕶️',bg:'linear-gradient(150deg,#303842,#12151c)'}
+{name:'Interstellar',genre:'Sci-Fi',art:'🚀',wiki:'Interstellar (film)',bg:'linear-gradient(150deg,#182b55,#070b18)'},
+{name:'Spider-Man: Brand New Day',genre:'Action / Sci-Fi',art:'🕷️',wiki:'Spider-Man: Brand New Day',bg:'linear-gradient(150deg,#7d1f2d,#111a38)'},
+{name:'The Odyssey',genre:'Adventure',art:'⚔️',wiki:'The Odyssey (2026 film)',bg:'linear-gradient(150deg,#315b72,#151a2d)'},
+{name:'Inside Out 2',genre:'Animation',art:'🌈',wiki:'Inside Out 2',bg:'linear-gradient(150deg,#315ca8,#6d2e91)'},
+{name:'The Notebook',genre:'Romance',art:'💌',wiki:'The Notebook (2004 film)',bg:'linear-gradient(150deg,#7c334f,#26121c)'},
+{name:'Anyone But You',genre:'Rom-Com',art:'💘',wiki:'Anyone but You',bg:'linear-gradient(150deg,#c04a6b,#4a1930)'},
+{name:'People We Meet on Vacation',genre:'Rom-Com',art:'✈️',wiki:'People We Meet on Vacation (film)',bg:'linear-gradient(150deg,#1f8a8a,#183b63)'},
+{name:'Pride & Prejudice',genre:'Romance',art:'🌹',wiki:'Pride & Prejudice (2005 film)',bg:'linear-gradient(150deg,#62435e,#211828)'},
+{name:'The Hangover',genre:'Comedy',art:'🤣',wiki:'The Hangover',bg:'linear-gradient(150deg,#71451d,#21130c)'},
+{name:'Superbad',genre:'Comedy',art:'😂',wiki:'Superbad',bg:'linear-gradient(150deg,#a74339,#251012)'},
+{name:'21 Jump Street',genre:'Comedy / Action',art:'🚔',wiki:'21 Jump Street',bg:'linear-gradient(150deg,#2a5d8a,#111826)'},
+{name:'Game Night',genre:'Comedy / Mystery',art:'🎲',wiki:'Game Night (film)',bg:'linear-gradient(150deg,#8a3b5d,#1b1424)'},
+{name:'10 Things I Hate About You',genre:'Rom-Com',art:'💗',wiki:'10 Things I Hate About You',bg:'linear-gradient(150deg,#8e5272,#251523)'},
+{name:'Mean Girls',genre:'Comedy',art:'💅',wiki:'Mean Girls (2004 film)',bg:'linear-gradient(150deg,#b52f68,#3b1528)'},
+{name:'Crazy Rich Asians',genre:'Rom-Com',art:'✨',wiki:'Crazy Rich Asians (film)',bg:'linear-gradient(150deg,#87623b,#251a10)'},
+{name:'Inception',genre:'Sci-Fi / Thriller',art:'🌀',wiki:'Inception',bg:'linear-gradient(150deg,#31536d,#101823)'},
+{name:'The Matrix',genre:'Sci-Fi / Action',art:'💾',wiki:'The Matrix',bg:'linear-gradient(150deg,#1f6b4c,#07150e)'},
+{name:'Dune: Part Two',genre:'Sci-Fi / Adventure',art:'🏜️',wiki:'Dune: Part Two',bg:'linear-gradient(150deg,#9a613d,#26170f)'},
+{name:'The Martian',genre:'Sci-Fi / Adventure',art:'🔴',wiki:'The Martian (film)',bg:'linear-gradient(150deg,#a04839,#22120f)'},
+{name:'Guardians of the Galaxy',genre:'Sci-Fi / Comedy',art:'🌌',wiki:'Guardians of the Galaxy (film)',bg:'linear-gradient(150deg,#4a2f86,#15112b)'}
 ];
-const moods=['Chill','Funny','Exciting','Thoughtful'],groups=['Campus','Friends','Family'];
+const moods=['Chill','Funny','Exciting','Romantic','Thoughtful','Epic','Mind-bending','Happy'],groups=['Campus','Friends','Family'];
 const seed=[
-['Voter 01','Midnight Signal',9,'Shadow Protocol','Exciting','Campus'],['Voter 02','The Last Recipe',8,'Neon Hearts','Funny','Friends'],['Voter 03','Midnight Signal',9,'City of Echoes','Exciting','Friends'],['Voter 04','City of Echoes',9,'Midnight Signal','Thoughtful','Family'],['Voter 05','Shadow Protocol',8,'Midnight Signal','Exciting','Campus'],['Voter 06','Wild Horizon',8,'Midnight Signal','Exciting','Friends'],['Voter 07','Midnight Signal',8,'Shadow Protocol','Exciting','Family'],['Voter 08','The Last Recipe',9,'City of Echoes','Funny','Campus'],['Voter 09','City of Echoes',8,'The Last Recipe','Thoughtful','Family'],['Voter 10','Midnight Signal',10,'Wild Horizon','Exciting','Campus'],['Voter 11','Shadow Protocol',9,'Midnight Signal','Exciting','Friends'],['Voter 12','The Last Recipe',8,'Neon Hearts','Funny','Campus'],['Voter 13','City of Echoes',9,'Midnight Signal','Thoughtful','Friends'],['Voter 14','Neon Hearts',8,'The Last Recipe','Chill','Family'],['Voter 15','Midnight Signal',9,'Shadow Protocol','Exciting','Campus'],['Voter 16','Wild Horizon',9,'Midnight Signal','Exciting','Friends'],['Voter 17','Shadow Protocol',8,'City of Echoes','Exciting','Family'],['Voter 18','Midnight Signal',8,'The Last Recipe','Chill','Friends'],['Voter 19','The Last Recipe',9,'City of Echoes','Funny','Campus'],['Voter 20','City of Echoes',8,'Shadow Protocol','Thoughtful','Family'],['Voter 21','Midnight Signal',10,'Wild Horizon','Exciting','Campus'],['Voter 22','Shadow Protocol',9,'Midnight Signal','Exciting','Friends'],['Voter 23','Neon Hearts',8,'The Last Recipe','Chill','Family'],['Voter 24','Wild Horizon',7,'Midnight Signal','Exciting','Campus'],['Voter 25','Midnight Signal',9,'City of Echoes','Exciting','Friends'],['Voter 26','The Last Recipe',8,'Shadow Protocol','Funny','Family'],['Voter 27','City of Echoes',9,'Midnight Signal','Thoughtful','Campus'],['Voter 28','Midnight Signal',9,'Shadow Protocol','Exciting','Friends'],['Voter 29','Shadow Protocol',8,'Midnight Signal','Exciting','Family'],['Voter 30','Midnight Signal',10,'The Last Recipe','Exciting','Campus']
+['Voter 01', 'Interstellar', 10, 'Inception', 'Exciting', 'Campus'],
+['Voter 02', 'The Hangover', 9, 'Game Night', 'Funny', 'Friends'],
+['Voter 03', 'Spider-Man: Brand New Day', 9, 'Interstellar', 'Exciting', 'Friends'],
+['Voter 04', 'Pride & Prejudice', 10, 'The Notebook', 'Thoughtful', 'Family'],
+['Voter 05', 'Inside Out 2', 9, 'The Martian', 'Happy', 'Campus'],
+['Voter 06', 'Anyone But You', 9, 'People We Meet on Vacation', 'Romantic', 'Friends'],
+['Voter 07', 'The Odyssey', 9, 'Dune: Part Two', 'Epic', 'Family'],
+['Voter 08', 'People We Meet on Vacation', 8, 'Anyone But You', 'Chill', 'Campus'],
+['Voter 09', 'The Notebook', 9, 'Pride & Prejudice', 'Romantic', 'Family'],
+['Voter 10', 'Inception', 10, 'Interstellar', 'Mind-bending', 'Campus'],
+['Voter 11', 'Guardians of the Galaxy', 9, 'Spider-Man: Brand New Day', 'Exciting', 'Friends'],
+['Voter 12', 'Superbad', 8, 'The Hangover', 'Funny', 'Campus'],
+['Voter 13', 'Inside Out 2', 10, 'Guardians of the Galaxy', 'Happy', 'Friends'],
+['Voter 14', '10 Things I Hate About You', 9, 'Anyone But You', 'Romantic', 'Family'],
+['Voter 15', 'Interstellar', 10, 'The Martian', 'Thoughtful', 'Campus'],
+['Voter 16', 'Dune: Part Two', 9, 'The Odyssey', 'Epic', 'Friends'],
+['Voter 17', 'Spider-Man: Brand New Day', 10, '21 Jump Street', 'Exciting', 'Family'],
+['Voter 18', 'The Hangover', 9, 'Superbad', 'Funny', 'Friends'],
+['Voter 19', 'Mean Girls', 8, '10 Things I Hate About You', 'Funny', 'Campus'],
+['Voter 20', 'The Notebook', 9, 'Anyone But You', 'Romantic', 'Family'],
+['Voter 21', 'The Martian', 9, 'Interstellar', 'Thoughtful', 'Campus'],
+['Voter 22', '21 Jump Street', 8, 'Game Night', 'Funny', 'Friends'],
+['Voter 23', 'Crazy Rich Asians', 9, 'People We Meet on Vacation', 'Chill', 'Family'],
+['Voter 24', 'The Odyssey', 8, 'Dune: Part Two', 'Epic', 'Campus'],
+['Voter 25', 'Pride & Prejudice', 10, 'The Notebook', 'Thoughtful', 'Friends'],
+['Voter 26', 'Game Night', 9, 'The Hangover', 'Funny', 'Family'],
+['Voter 27', 'The Matrix', 9, 'Inception', 'Mind-bending', 'Campus'],
+['Voter 28', 'Spider-Man: Brand New Day', 9, 'Guardians of the Galaxy', 'Exciting', 'Friends'],
+['Voter 29', 'Anyone But You', 8, '10 Things I Hate About You', 'Romantic', 'Family'],
+['Voter 30', 'Interstellar', 10, 'Dune: Part Two', 'Exciting', 'Campus']
 ].map(r=>({voter:r[0],movie:r[1],rating:+r[2],second:r[3],mood:r[4],group:r[5]}));
 let data=JSON.parse(localStorage.getItem('streamingVotesV2')||'null')||seed.map(x=>({...x}));
-function info(n){return movies.find(m=>m.name===n)||{genre:'Unknown',art:'🎬',bg:'linear-gradient(150deg,#333,#111)'}}
+const posterCache={};
+async function fetchPoster(m){
+  if(posterCache[m.name]!==undefined)return posterCache[m.name];
+  try{
+    const url='https://en.wikipedia.org/api/rest_v1/page/summary/'+encodeURIComponent(m.wiki);
+    const r=await fetch(url,{headers:{'Accept':'application/json'}});
+    if(!r.ok)throw new Error('poster lookup failed');
+    const j=await r.json();
+    const src=j?.thumbnail?.source || '';
+    posterCache[m.name]=src;
+    return src;
+  }catch(e){posterCache[m.name]='';return ''}
+}
+function info(n){return movies.find(m=>m.name===n)||{genre:'Unknown',art:'🎬',bg:'linear-gradient(150deg,#333,#111)',wiki:n}}
 function pct(n,d){return d?Math.round(n/d*100):0}
 function opts(id,arr){document.getElementById(id).innerHTML=arr.map(v=>`<option>${v}</option>`).join('')}
 function setup(){opts('movie',movies.map(m=>m.name));opts('second',movies.map(m=>m.name));opts('rating',[1,2,3,4,5,6,7,8,9,10]);opts('mood',moods);opts('group',groups)}
 function calc(){let total=data.length, counts={},ratings={},mood={},combo={};data.forEach(d=>{counts[d.movie]=(counts[d.movie]||0)+1;(ratings[d.movie]??=[]).push(d.rating);mood[d.mood]=(mood[d.mood]||0)+1;let g=info(d.movie).genre;combo[d.mood+'|'+g]=(combo[d.mood+'|'+g]||0)+1});let sorted=movies.map(m=>({movie:m.name,genre:m.genre,votes:counts[m.name]||0,avg:(ratings[m.name]||[]).reduce((a,b)=>a+b,0)/(ratings[m.name]?.length||1)})).sort((a,b)=>b.votes-a.votes);let win=sorted[0]||{movie:'—',genre:'—',votes:0,avg:0};return{total,counts,ratings,mood,combo,sorted,win,avg:total?data.reduce((s,d)=>s+d.rating,0)/total:0}}
 function render(){let s=calc(),w=s.win,share=pct(w.votes,s.total),second=s.sorted[1]?pct(s.sorted[1].votes,s.total):0;document.getElementById('winnerName').textContent=w.movie;document.getElementById('winnerMeta').textContent=`${w.genre} • ${w.votes} of ${s.total} votes • ${w.avg.toFixed(1)}/10 average rating`;document.getElementById('winnerShare').textContent=`${share}% share`;document.getElementById('consensusPill').textContent=share>=50?'Clear winner':'Close decision';document.getElementById('kpiVoters').textContent=s.total;document.getElementById('kpiRating').textContent=s.avg.toFixed(1);document.getElementById('kpiShare').textContent=share+'%';document.getElementById('kpiSecond').textContent=second+'%';
  document.getElementById('rankings').innerHTML=s.sorted.map((r,i)=>`<div class="movie-row"><div class="num">#${i+1}</div><div><div class="mname">${r.movie}</div><div class="barbg"><div class="bar" style="width:${pct(r.votes,Math.max(1,w.votes))}%"></div></div></div><div class="votes">${r.votes}</div></div>`).join('');
- document.getElementById('posters').innerHTML=s.sorted.map(r=>{let m=info(r.movie);return `<div class="poster ${r.movie===w.movie?'win':''}" style="background:${m.bg}"><div class="art">${m.art}</div><div><div class="title">${r.movie}</div><div class="meta">${r.genre} • ${r.votes} votes • ⭐ ${r.avg.toFixed(1)}</div></div></div>`}).join('');
+ document.getElementById('posters').innerHTML=s.sorted.map(r=>{let m=info(r.movie),src=posterCache[r.movie]||'';return `<div class="poster ${r.movie===w.movie?'win':''}" style="background:${m.bg}">${src?`<img class="posterimg" src="${src}" alt="${r.movie} poster" loading="lazy">`:''}<div class="posterOverlay"></div><div class="posterTop">${m.art}</div><div class="posterText"><div class="title">${r.movie}</div><div class="meta">${r.genre} • ${r.votes} votes • ⭐ ${r.avg.toFixed(1)}</div></div></div>`}).join('');
  let gs=[...new Set(movies.map(m=>m.genre))];let heat=`<div class="lab">Mood / Genre</div>`+gs.map(g=>`<div style="font-weight:900">${g}</div>`).join('');moods.forEach(m=>{heat+=`<div class="lab">${m}</div>`+gs.map(g=>{let v=s.combo[m+'|'+g]||0;let alpha=Math.min(.82,.08+v/Math.max(1,s.total)*2.6);return `<div class="cell" style="background:rgba(155,92,255,${alpha})">${v}</div>`}).join('')});document.getElementById('heatmap').style.gridTemplateColumns=`105px repeat(${gs.length},1fr)`;document.getElementById('heatmap').innerHTML=heat;
  document.getElementById('consensusBig').textContent=share+'%';document.getElementById('consensusBar').style.width=share+'%';let lead=w.votes, runner=s.sorted[1]?.votes||0;document.getElementById('insight').innerHTML=share>=50?`<b>${w.movie}</b> has majority support. The class could make the decision quickly.`:lead-runner<=1?`The room is split: <b>${w.movie}</b> is only ${lead-runner} vote ahead of the runner-up.`:`<b>${w.movie}</b> leads by ${lead-runner} votes, but the result is not a landslide.`;
  drawMood(s.mood);drawScatter(s.sorted);renderTable();localStorage.setItem('streamingVotesV2',JSON.stringify(data));}
@@ -107,12 +160,24 @@ function drawMood(m){let c=document.getElementById('moodChart'),ctx=fitCanvas(c)
 function drawScatter(rows){let c=document.getElementById('ratingChart'),ctx=fitCanvas(c),W=c.clientWidth,H=280;ctx.clearRect(0,0,W,H);ctx.strokeStyle='#2b334c';ctx.fillStyle='#8d98ae';ctx.font='11px system-ui';[0,2.5,5,7.5,10].forEach(y=>{let py=H-45-y/10*(H-70);ctx.beginPath();ctx.moveTo(42,py);ctx.lineTo(W-20,py);ctx.stroke();ctx.fillText(y.toFixed(1),9,py+4)});let max=Math.max(1,...rows.map(r=>r.votes));rows.forEach((r,i)=>{let x=52+i*((W-90)/Math.max(1,rows.length-1)),y=H-45-(r.avg/10)*(H-70),rad=7+r.votes/max*13;ctx.beginPath();ctx.fillStyle='#4de8ff';ctx.globalAlpha=.8;ctx.arc(x,y,rad,0,Math.PI*2);ctx.fill();ctx.globalAlpha=1;ctx.fillStyle='#e5ecf8';ctx.textAlign='center';ctx.fillText(r.movie.split(' ')[0],x,H-18)});}
 function toast(t){let el=document.getElementById('toast');el.textContent=t;el.classList.add('show');setTimeout(()=>el.classList.remove('show'),1800)}
 async function submitToGoogleSheets(vote){if(!CONFIG.GOOGLE_APPS_SCRIPT_URL)return false;try{await fetch(CONFIG.GOOGLE_APPS_SCRIPT_URL,{method:'POST',mode:'no-cors',body:JSON.stringify(vote)});return true}catch(e){return false}}
-async function loadFromSheets(){if(CONFIG.GOOGLE_SHEET_ID){try{let url=`https://docs.google.com/spreadsheets/d/${CONFIG.GOOGLE_SHEET_ID}/gviz/tq?tqx=out:csv&sheet=${encodeURIComponent(CONFIG.GOOGLE_SHEET_TAB)}`;let text=await fetch(url).then(r=>r.text());let lines=text.trim().split(/\r?\n/).slice(1);let parsed=lines.map(parseCSV).filter(r=>r.length>=7).map(r=>({voter:r[0],movie:r[1],rating:+r[3],second:r[4],mood:r[5],group:r[6]})).filter(x=>x.voter);if(parsed.length){data=parsed;render();toast('✅ Synced from Google Sheets')}}catch(e){toast('⚠️ Sheet read failed')}}else toast('Paste your Google Sheet ID in CONFIG first.')}
+async function loadFromSheets(){
+  if(!CONFIG.GOOGLE_APPS_SCRIPT_URL){toast('Paste your Apps Script /exec URL in CONFIG first.');return}
+  try{
+    const r=await fetch(CONFIG.GOOGLE_APPS_SCRIPT_URL+'?action=votes',{cache:'no-store'});
+    const j=await r.json();
+    if(!j.ok)throw new Error(j.error||'Sync failed');
+    const parsed=(j.votes||[]).map(x=>({voter:x.voter||'',movie:x.movie||'',rating:+x.rating||0,second:x.second||'',mood:x.mood||'',group:x.group||''})).filter(x=>x.voter&&x.movie);
+    data=parsed;render();toast('✅ Synced from Google Sheets');
+  }catch(e){toast('⚠️ Sheet sync failed — check Apps Script deployment and URL');}
+}
 function parseCSV(line){let out=[],cur='',q=false;for(let i=0;i<line.length;i++){let ch=line[i];if(ch==='"'&&line[i+1]==='"'){cur+='"';i++;continue}if(ch==='"'){q=!q;continue}if(ch===','&&!q){out.push(cur);cur=''}else cur+=ch}out.push(cur);return out}
 function downloadCSV(){let rows=[['Voter','Movie Pick','Genre','Rating','Second Choice','Mood','Group'],...data.map(d=>[d.voter,d.movie,info(d.movie).genre,d.rating,d.second,d.mood,d.group])];let csv=rows.map(r=>r.map(x=>'"'+String(x).replaceAll('"','""')+'"').join(',')).join('\n');let a=document.createElement('a');a.href=URL.createObjectURL(new Blob([csv],{type:'text/csv'}));a.download='streaming_night_votes.csv';a.click()}
 
 document.getElementById('voteForm').addEventListener('submit',async e=>{e.preventDefault();let vote={voter:document.getElementById('voter').value.trim(),movie:document.getElementById('movie').value,rating:+document.getElementById('rating').value,second:document.getElementById('second').value,mood:document.getElementById('mood').value,group:document.getElementById('group').value};data.push(vote);render();e.target.reset();setup();let pushed=await submitToGoogleSheets(vote);document.getElementById('status').textContent=pushed?'✅ Vote sent to Google Sheets.':'ℹ️ Vote saved on this browser. Add the Apps Script URL to sync with Google Sheets.';toast(pushed?'☁️ Saved to Google Sheets!':'🍿 Vote added!')});
-setup();render();window.addEventListener('resize',render);
+setup();render();
+Promise.all(movies.map(fetchPoster)).then(()=>render());
+if(CONFIG.GOOGLE_APPS_SCRIPT_URL) setTimeout(loadFromSheets,350);
+window.addEventListener('resize',render);
 </script>
 </body>
 </html>
